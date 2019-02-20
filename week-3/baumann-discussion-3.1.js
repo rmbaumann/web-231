@@ -9,6 +9,19 @@
 */
 
 /*
+    Expected output:
+    FirstName LastName
+    Discussion 3.1
+    Today's Date
+*/
+
+// lists details of formatted header, including first name, last name and assignment
+
+const header = require('./baumann-header.js');
+
+console.log(header.display("Reva", "Baumann", "Discussion 3.1"));
+
+/*
 ; Expected Output:
 ; The cat is a feline and lists families of various carnivora that are false.
 */
