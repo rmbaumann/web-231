@@ -4,7 +4,7 @@
 ; Author: Reva Baumann 
 ; Date:   24 February 2019
 ; Modified By: Reva Baumann
-; Description: Program that uses for, while, if or switch statements with two errors. 
+; Description: Replace a series of if...else statements with a switch block.
 ;===========================================
 */
 
