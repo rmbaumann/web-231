@@ -19,6 +19,8 @@
 
 */
 
+// start program
+
 // lists details of formatted header, including first name, last name and assignment
 
 const header = require('./baumann-header.js');
