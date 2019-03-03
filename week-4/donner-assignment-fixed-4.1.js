@@ -23,7 +23,8 @@ Expected output:
 
 */
 
-
+const header = require('../donner-header.js');  // Calls the well formatted header.
+console.log(header.display("Adam", "Donner", "Exercise 4.1"));  // This assigns values to the donner-header.js file and outputs it to the console.log.
 
 console.log("")  // This creates a linebreak between our header and the displayed values in assigned in the array.
 
