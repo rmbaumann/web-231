@@ -25,14 +25,14 @@ console.log(header.display("Reva", "Baumann", "Discussion 4.1"));
 
 // start program
 
-var animals = new Array("cat", "dog", "hedgehog", "fox); // declare an array value under four (4) elements
+var animals = new Array("cat", "dog", "hedgehog", "fox"); // declare an array value under four (4) elements
 
-var somValue = animals[2]; // returns the third element in a 0 indexed array
+var someValue = animals[2]; // returns the third element in a 0 indexed array
 
 console.log(someValue); // if someValue has a value of undefined, then it defaults to object
 
 var someArray = new Array ("bear"); // add new element of "bear"
 
-var someOtherArray = newArray ("wolf"); // add new element of "wolf"
+var someOtherArray = new Array ("wolf"); // add new element of "wolf"
 
 // end program
