@@ -8,7 +8,7 @@
 ;============================================
 -->
 
-/*
+<!--
 Expected output:
   Reva Baumann 
   Discussion 8.1
@@ -16,26 +16,31 @@ Expected output:
 
   List and Ages of Superheroes, along with date and time display.
   
-*/
+--!>
 
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta name="description"
-    content="HTML & Javascript" />
-<meta name="keywords"
-    content=  "" />
-<meta name="author"
-    content="Reva Baumann" />
-<title>Discussion 8.1</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Discussion 8.1</title>
+  <!-- jquery library  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- style sheet provided in starter code -->
+  <link rel="stylesheet" href="../site.css">
+  <!-- fonts used in the page -->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     
-    <style type="text/css">
-
-    </style>
-</head>
-    <body>
+<style>
+    html {
+      font-family: "Ubuntu","Open Sans";
+    }
+    .odd {
+      background: #000000;
+    }
+  </style>
 <h2 style="columns: #000000;;">Hero Identity</h2>
 
 <!-- Displays a simple table of superhero names and ages-->
@@ -66,6 +71,8 @@ Expected output:
                 <td>12</td>
               </tr>
       </table> 
+
+
 
 <!--Simple button that displays date and time-->
 <button type="button"
