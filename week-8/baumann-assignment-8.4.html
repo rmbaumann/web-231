@@ -1,0 +1,152 @@
+<!--
+============================================
+; Title:  baumann-assignment-8.4.html
+; Author: Reva Baumann
+; Date:   31 March 2019
+; Modified by:
+; Description: Create a JavaScript constructor with employee details
+;===========================================
+-->
+
+<!--
+Expected output:
+  Reva Baumann 
+  Exercise 8.4
+  31 March 2019
+
+  Fruits
+
+1   Apple
+2 	Orange
+3 	Banana
+4 	Kiwi
+5 	Pear
+  
+-->
+
+<!-- lists details of formatted header, including first name, last name and assignment
+const header = require('./baumann-header.js');
+console.log(header.display("Reva", "Baumann", "Exercise 8.4"));-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 8.4</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- href to css -->
+    <link rel="stylesheet" href="../site.css" />
+
+    <style type="text/css">
+      #emps tbody tr:hover {
+        cursor: pointer;
+        background-color:powderblue;
+      }
+      <!--Details of coloration of website-->
+    <style type="text/css">
+      .topbar {
+          background-color:yellowgreen;
+          height: 50px;
+        }
+        tr:nth-child(even) {background:yellow}
+        tr:nth-child(odd) {background:yellowgreen}
+        h2 {
+          padding-top: 20px;
+          padding-left: 20px;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 500;
+          margin: 0 auto;
+        }
+        p {
+          font-family: 'Roboto', sans-serif;
+          padding-left: 20px;
+          font-weight: 300;
+        }
+        table {
+          padding-left: 20px;
+          padding-top: 20px;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 400;
+          width: fit-content;
+          display: block;
+        }
+        button {
+          margin-left: 20px;
+        }
+      </style>
+    </style>
+
+
+  </head>
+  <body>
+    <div id="emps"></div>
+
+    <script type="text/javascript">
+      // jQuery onClick reaction
+      $(function() {
+        function getEmployee(id) {
+          for (var empId = 0; empId < employees.length; empId++) {
+            if (employees[empId].id == id) {
+              alert(
+                employees[empId].id +
+                  " " +
+                  employees[empId].firstName +
+                  " " +
+                  employees[empId].lastName +
+                  " " +
+                  employees[empId].title
+              );
+              break;
+            }
+          }
+        }
+        // This creates an employee constructor objects
+        function employee(id, firstName, lastName, title) {
+          this.id = id;
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.title = title;
+        }
+        // This creates 5 new objects with employee details
+        const employees = [
+          new employee(1, "Diana", "Prince", "Art Historian"),
+          new employee(2, "Bruce", "Wayne", "Millionaire Playboy"),
+          new employee(3, "Clark", "Kent", "Reporter"),
+          new employee(4, "Barry", "Allen", "Police Officer, Forensic Scientist"),
+          new employee(5, "Oliver", "Queen", "Philanthropist")
+        ];
+        var output = "<h1>Employee Details</h1>";
+        output += "<table><thead>";
+        output +=
+          "<tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Title</th></tr>";
+        output += "</thead><tbody>";
+        $.each(employees, function(k, c) {
+          var row = $("<tr>");
+          $("<td>")
+            .html(c.id)
+            .appendTo(row);
+          $("<td>")
+            .html(c.firstName)
+            .appendTo(row);
+          $("<td>")
+            .html(c.lastName)
+            .appendTo(row);
+          $("<td>")
+            .html(c.title)
+            .appendTo(row);
+          output += row.prop("outerHTML");
+        });
+        output += "</tbody></table>";
+        document.getElementById("emps").innerHTML = output;
+        $("#emps").addClass("table tr");
+        $("table tr").click(function() {
+          event.preventDefault();
+          var id = $(this).find("td:first").html();
+          getEmployee(id);
+        });
+      });
+    </script>
+  </body>
+</html>
