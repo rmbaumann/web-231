@@ -1,0 +1,119 @@
+<!--
+============================================
+; Title:  baumann-exercise-8.3.html
+; Author: Reva Baumann
+; Date:   31 March 2019
+; Modified by:
+; Description: Shows jquery and the click and toggle functions, displaying a list of fruits
+;===========================================
+-->
+
+<!--
+Expected output:
+  Reva Baumann 
+  Exercise 8.3
+  31 March 2019
+
+  Fruits
+
+    Apple1
+    Orange2
+    Banana3
+    Kiwi4
+    Pear5
+  
+-->
+
+<!-- lists details of formatted header, including first name, last name and assignment
+const header = require('./baumann-header.js');
+console.log(header.display("Reva", "Baumann", "Exercise 8.3"));-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Click</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../site.css">
+
+    <!--Details of coloration of website-->
+    <style type="text/css">
+      .topbar {
+          background-color:yellowgreen;
+          height: 50px;
+        }
+        tr:nth-child(even) {background:yellow}
+        tr:nth-child(odd) {background:yellowgreen}
+        h2 {
+          padding-top: 20px;
+          padding-left: 20px;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 500;
+          margin: 0 auto;
+        }
+        p {
+          font-family: 'Roboto', sans-serif;
+          padding-left: 20px;
+          font-weight: 300;
+        }
+        table {
+          padding-left: 20px;
+          padding-top: 20px;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 400;
+          width: fit-content;
+          display: block;
+        }
+        button {
+          margin-left: 20px;
+        }
+      </style>
+</head>
+<body>
+    <div class="topbar"></div>
+<h2>What is Lorem Ipsum</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<button>Toggle</button>
+
+<!-- Table of fruits with cooresponding id  -->
+<table>
+    <tr>
+        <td><a href="#" class="fruitId">1</a></td>
+        <td>Apple</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="fruitId">2</a></td>
+        <td>Orange</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="fruitId">3</a></td>
+        <td>Banana</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="fruitId">4</a></td>
+        <td>Kiwi</td>
+    <tr>
+        <td><a href="#" class="fruitId">5</a></td>
+        <td>Pear</td>
+    </tr>
+
+</table>
+
+<!-- Script displaying details of fruitID and fruitType-->
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").toggle();
+  });
+});
+$(".fruitId").click(function (event) {
+    event.preventDefault();
+    var fruitId = $(this).text();
+    var fruitType = $(this).closest("td").next().text();
+    alert("Fruit Id: " + fruitId + ", Fruit Type: " + fruitType);
+    });
+</script>
+
+</body>
+</html>
